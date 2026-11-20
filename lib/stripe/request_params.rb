@@ -5,6 +5,9 @@ module Stripe
   # For internal use only. Does not provide a stable API and may be broken
   # with future non-major changes.
   class RequestParams
+    SETTERS = Module.new
+    private_constant :SETTERS
+
     class << self
       # Override the object instantiation flow in Ruby in order to track explicitly set keys.
       # We do not want to set a key to nil if the user has not explicitly set it to nil.
@@ -18,14 +21,22 @@ module Stripe
       # Override attr_accessor to create setters that track explicitly set keys
       def attr_accessor(*names)
         names.each do |name|
-          # Define getter
-          define_method(name) { instance_variable_get("@#{name}") }
+          name = name.to_sym
+          attr_reader name
 
-          # Define setter that tracks the key as explicitly set
-          define_method("#{name}=") do |value|
-            @_explicitly_set_keys&.add(name)
-            instance_variable_set("@#{name}", value)
+          # Define setter that tracks the key as explicitly set. Param classes
+          # repeat the same names many times over, so each setter is compiled
+          # once and shared instead of being a closure per class.
+          setter = :"#{name}="
+          unless SETTERS.method_defined?(setter)
+            SETTERS.module_eval <<~RUBY, __FILE__, __LINE__ + 1
+              def #{name}=(value)                    # def amount=(value)
+                @_explicitly_set_keys&.add(:#{name}) #   @_explicitly_set_keys&.add(:amount)
+                @#{name} = value                     #   @amount = value
+              end                                    # end
+            RUBY
           end
+          define_method(setter, SETTERS.instance_method(setter))
         end
       end
 
