@@ -3379,6 +3379,34 @@ module Stripe
                     end
                   end
 
+                  class Chf < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
                   class Czk < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
@@ -3436,6 +3464,90 @@ module Stripe
                   end
 
                   class Gbp < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Hkd < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Huf < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Jpy < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
                         # To request a protection, pass true.
@@ -3547,6 +3659,34 @@ module Stripe
                     end
                   end
 
+                  class Ron < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
                   class Sek < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
@@ -3630,53 +3770,105 @@ module Stripe
                       @requested = requested
                     end
                   end
+
+                  class Zar < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
                   # Can receive business storage-type funds on Stripe in AUD.
                   attr_accessor :aud
                   # Can receive business storage-type funds on Stripe in CAD.
                   attr_accessor :cad
+                  # Can receive business storage-type funds on Stripe in CHF.
+                  attr_accessor :chf
                   # Can receive business storage-type funds on Stripe in CZK.
                   attr_accessor :czk
                   # Can receive business storage-type funds on Stripe in EUR.
                   attr_accessor :eur
                   # Can receive business storage-type funds on Stripe in GBP.
                   attr_accessor :gbp
+                  # Can receive business storage-type funds on Stripe in HKD.
+                  attr_accessor :hkd
+                  # Can receive business storage-type funds on Stripe in HUF.
+                  attr_accessor :huf
+                  # Can receive business storage-type funds on Stripe in JPY.
+                  attr_accessor :jpy
                   # Can receive business storage-type funds on Stripe in NOK.
                   attr_accessor :nok
                   # Can receive business storage-type funds on Stripe in OUSD.
                   attr_accessor :ousd
                   # Can receive business storage-type funds on Stripe in PLN.
                   attr_accessor :pln
+                  # Can receive business storage-type funds on Stripe in RON.
+                  attr_accessor :ron
                   # Can receive business storage-type funds on Stripe in SEK.
                   attr_accessor :sek
                   # Can receive business storage-type funds on Stripe in USD.
                   attr_accessor :usd
                   # Can receive business storage-type funds on Stripe in USDC.
                   attr_accessor :usdc
+                  # Can receive business storage-type funds on Stripe in ZAR.
+                  attr_accessor :zar
 
                   def initialize(
                     aud: nil,
                     cad: nil,
+                    chf: nil,
                     czk: nil,
                     eur: nil,
                     gbp: nil,
+                    hkd: nil,
+                    huf: nil,
+                    jpy: nil,
                     nok: nil,
                     ousd: nil,
                     pln: nil,
+                    ron: nil,
                     sek: nil,
                     usd: nil,
-                    usdc: nil
+                    usdc: nil,
+                    zar: nil
                   )
                     @aud = aud
                     @cad = cad
+                    @chf = chf
                     @czk = czk
                     @eur = eur
                     @gbp = gbp
+                    @hkd = hkd
+                    @huf = huf
+                    @jpy = jpy
                     @nok = nok
                     @ousd = ousd
                     @pln = pln
+                    @ron = ron
                     @sek = sek
                     @usd = usd
                     @usdc = usdc
+                    @zar = zar
                   end
                 end
 
@@ -3737,6 +3929,34 @@ module Stripe
                     end
                   end
 
+                  class Chf < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
                   class Czk < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
@@ -3794,6 +4014,90 @@ module Stripe
                   end
 
                   class Gbp < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Hkd < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Huf < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
+                  class Jpy < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
                         # To request a protection, pass true.
@@ -3905,6 +4209,34 @@ module Stripe
                     end
                   end
 
+                  class Ron < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
+
                   class Sek < ::Stripe::RequestParams
                     class Protections < ::Stripe::RequestParams
                       class PspMigration < ::Stripe::RequestParams
@@ -3988,53 +4320,105 @@ module Stripe
                       @requested = requested
                     end
                   end
+
+                  class Zar < ::Stripe::RequestParams
+                    class Protections < ::Stripe::RequestParams
+                      class PspMigration < ::Stripe::RequestParams
+                        # To request a protection, pass true.
+                        attr_accessor :requested
+
+                        def initialize(requested: nil)
+                          @requested = requested
+                        end
+                      end
+                      # Parameter to request psp_migration protection.
+                      attr_accessor :psp_migration
+
+                      def initialize(psp_migration: nil)
+                        @psp_migration = psp_migration
+                      end
+                    end
+                    # Protection types to request for this capability (e.g. "psp_migration").
+                    attr_accessor :protections
+                    # To request a new Capability for an account, pass true. There can be a delay before the requested Capability becomes active.
+                    attr_accessor :requested
+
+                    def initialize(protections: nil, requested: nil)
+                      @protections = protections
+                      @requested = requested
+                    end
+                  end
                   # Can send business storage-type funds on Stripe in AUD.
                   attr_accessor :aud
                   # Can send business storage-type funds on Stripe in CAD.
                   attr_accessor :cad
+                  # Can send business storage-type funds on Stripe in CHF.
+                  attr_accessor :chf
                   # Can send business storage-type funds on Stripe in CZK.
                   attr_accessor :czk
                   # Can send business storage-type funds on Stripe in EUR.
                   attr_accessor :eur
                   # Can send business storage-type funds on Stripe in GBP.
                   attr_accessor :gbp
+                  # Can send business storage-type funds on Stripe in HKD.
+                  attr_accessor :hkd
+                  # Can send business storage-type funds on Stripe in HUF.
+                  attr_accessor :huf
+                  # Can send business storage-type funds on Stripe in JPY.
+                  attr_accessor :jpy
                   # Can send business storage-type funds on Stripe in NOK.
                   attr_accessor :nok
                   # Can send business storage-type funds on Stripe in OUSD.
                   attr_accessor :ousd
                   # Can send business storage-type funds on Stripe in PLN.
                   attr_accessor :pln
+                  # Can send business storage-type funds on Stripe in RON.
+                  attr_accessor :ron
                   # Can send business storage-type funds on Stripe in SEK.
                   attr_accessor :sek
                   # Can send business storage-type funds on Stripe in USD.
                   attr_accessor :usd
                   # Can send business storage-type funds on Stripe in USDC.
                   attr_accessor :usdc
+                  # Can send business storage-type funds on Stripe in ZAR.
+                  attr_accessor :zar
 
                   def initialize(
                     aud: nil,
                     cad: nil,
+                    chf: nil,
                     czk: nil,
                     eur: nil,
                     gbp: nil,
+                    hkd: nil,
+                    huf: nil,
+                    jpy: nil,
                     nok: nil,
                     ousd: nil,
                     pln: nil,
+                    ron: nil,
                     sek: nil,
                     usd: nil,
-                    usdc: nil
+                    usdc: nil,
+                    zar: nil
                   )
                     @aud = aud
                     @cad = cad
+                    @chf = chf
                     @czk = czk
                     @eur = eur
                     @gbp = gbp
+                    @hkd = hkd
+                    @huf = huf
+                    @jpy = jpy
                     @nok = nok
                     @ousd = ousd
                     @pln = pln
+                    @ron = ron
                     @sek = sek
                     @usd = usd
                     @usdc = usdc
+                    @zar = zar
                   end
                 end
                 # Can receive business storage-type funds on Stripe.
